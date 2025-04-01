@@ -11,7 +11,7 @@ interface Props {
 const Gamecard = ({ game }: Props) => {
   return (
     <div>
-      <Card width='300px' borderRadius={10} overflow="hidden">
+      <Card>
         <Image src={
          getCroppedImageUrl( game.background_image)} />
         <CardBody>
