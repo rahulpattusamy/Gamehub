@@ -4,7 +4,7 @@ import Gamecard from "./Gamecard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 const GameGrid = () => {
-  const { games, error, isLoading } = useGames();
+  const { data, error, isLoading } = useGames();
 
   const skeletons = [1,2,3,4,5,6];
 
@@ -13,7 +13,7 @@ const GameGrid = () => {
       {error && <text>{error}</text>}
       <SimpleGrid columns={{sm:1, md:2, lg:3, xl:3}} spacing={10} padding={10}>
         {isLoading && skeletons.map(skeleton=><GameCardContainer><GameCardSkeleton key={skeleton}/></GameCardContainer>)}
-        {games.map((game) => (
+        {data.map((game) => (
           <GameCardContainer>
                <Gamecard key={game.id} game={game}/>
           </GameCardContainer>
